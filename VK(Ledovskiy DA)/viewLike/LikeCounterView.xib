@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LikeCounterView" customModule="VK_Ledovskiy_DA_" customModuleProvider="target">
+            <connections>
+                <outlet property="heartButton" destination="fmm-Mn-F7w" id="KcG-bF-lXt"/>
+                <outlet property="likeCounterLabel" destination="Vqf-yb-Gy1" id="fbL-za-5J2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="267" height="115"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmm-Mn-F7w">
+                    <rect key="frame" x="227" y="37" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="3fH-jQ-bhl"/>
+                        <constraint firstAttribute="height" constant="40" id="eBK-oo-oNv"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="systemRedColor"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="heart" catalog="system"/>
+                    <connections>
+                        <action selector="pressHeartButton:" destination="-1" eventType="touchUpInside" id="bBA-0e-ECh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqf-yb-Gy1">
+                    <rect key="frame" x="214" y="47" width="10" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fmm-Mn-F7w" secondAttribute="bottom" constant="38" id="CAR-uG-ONC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fmm-Mn-F7w" secondAttribute="trailing" id="Les-Fr-gYA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Vqf-yb-Gy1" secondAttribute="bottom" constant="47" id="SM9-Fa-a90"/>
+                <constraint firstItem="fmm-Mn-F7w" firstAttribute="leading" secondItem="Vqf-yb-Gy1" secondAttribute="trailing" constant="3" id="TXZ-b3-sEd"/>
+                <constraint firstItem="Vqf-yb-Gy1" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="3" id="slV-bL-w9s"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="31.159420289855074" y="-167.07589285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

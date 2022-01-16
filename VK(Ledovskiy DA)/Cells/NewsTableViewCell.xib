@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="415" id="KGk-i7-Jjw" customClass="NewsTableViewCell" customModule="VK_Ledovskiy_DA_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="415"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="415"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MuG-rA-JDk" userLabel="newsAvatar">
+                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="MuG-rA-JDk" secondAttribute="height" multiplier="1:1" id="KWa-cl-n2R"/>
+                            <constraint firstAttribute="height" constant="40" id="Ppe-qX-1X5"/>
+                            <constraint firstAttribute="width" constant="40" id="TwN-F8-S8O"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMt-Op-FF1" userLabel="newsLabel">
+                        <rect key="frame" x="48" y="10" width="42" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW4-x0-qZq" userLabel="textNews">
+                        <rect key="frame" x="9" y="55" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-cz-fFa">
+                        <rect key="frame" x="9" y="80" width="280" height="280"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="280" id="1xe-I3-ARX"/>
+                            <constraint firstAttribute="width" secondItem="9CO-cz-fFa" secondAttribute="height" multiplier="1:1" id="c8O-T3-znW"/>
+                            <constraint firstAttribute="height" constant="280" id="lG7-3G-GaX"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiQ-nm-rJ2">
+                        <rect key="frame" x="0.0" y="411" width="300" height="4"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="4" id="iQ4-At-IKe"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XRk-Wc-8fc">
+                        <rect key="frame" x="0.0" y="43" width="300" height="2"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="qWy-if-avs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9CO-cz-fFa" secondAttribute="trailing" constant="11" id="1tJ-Kf-bhI"/>
+                    <constraint firstItem="KW4-x0-qZq" firstAttribute="top" secondItem="MuG-rA-JDk" secondAttribute="bottom" constant="15" id="4Ap-fc-iTm"/>
+                    <constraint firstItem="NMt-Op-FF1" firstAttribute="top" secondItem="MuG-rA-JDk" secondAttribute="bottom" constant="-30" id="CVn-Pw-KrJ"/>
+                    <constraint firstItem="NMt-Op-FF1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Q5V-81-wt1"/>
+                    <constraint firstItem="NMt-Op-FF1" firstAttribute="centerY" secondItem="MuG-rA-JDk" secondAttribute="centerY" id="U2t-2s-cFj"/>
+                    <constraint firstItem="XRk-Wc-8fc" firstAttribute="leading" secondItem="MuG-rA-JDk" secondAttribute="leading" id="cMj-ge-qNr"/>
+                    <constraint firstItem="MuG-rA-JDk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="fur-sF-Y55"/>
+                    <constraint firstItem="XRk-Wc-8fc" firstAttribute="top" secondItem="MuG-rA-JDk" secondAttribute="bottom" constant="3" id="h0x-lx-7Mi"/>
+                    <constraint firstItem="MuG-rA-JDk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hP6-xi-Evm"/>
+                    <constraint firstItem="NMt-Op-FF1" firstAttribute="leading" secondItem="MuG-rA-JDk" secondAttribute="trailing" constant="8" id="jF2-br-k0V"/>
+                    <constraint firstItem="9CO-cz-fFa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="okL-od-dRG"/>
+                    <constraint firstItem="XRk-Wc-8fc" firstAttribute="trailing" secondItem="QiQ-nm-rJ2" secondAttribute="trailing" id="pb8-V5-HFf"/>
+                    <constraint firstItem="KW4-x0-qZq" firstAttribute="leading" secondItem="9CO-cz-fFa" secondAttribute="leading" id="skZ-mx-yAH"/>
+                    <constraint firstItem="9CO-cz-fFa" firstAttribute="top" secondItem="KW4-x0-qZq" secondAttribute="bottom" constant="4" id="uJ5-On-irl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="njF-e1-oar" firstAttribute="bottom" secondItem="QiQ-nm-rJ2" secondAttribute="bottom" id="2rq-Ja-9cS"/>
+                <constraint firstItem="QiQ-nm-rJ2" firstAttribute="leading" secondItem="njF-e1-oar" secondAttribute="leading" id="3En-hu-VjB"/>
+                <constraint firstItem="njF-e1-oar" firstAttribute="trailing" secondItem="QiQ-nm-rJ2" secondAttribute="trailing" id="JSV-qL-ZC9"/>
+            </constraints>
+            <connections>
+                <outlet property="contentImageNews" destination="9CO-cz-fFa" id="vlx-t0-Etd"/>
+                <outlet property="newsAvatar" destination="MuG-rA-JDk" id="CpX-6c-GGq"/>
+                <outlet property="newsLabel" destination="NMt-Op-FF1" id="5w4-sa-wW8"/>
+                <outlet property="newsText" destination="KW4-x0-qZq" id="1qU-xT-paS"/>
+            </connections>
+            <point key="canvasLocation" x="52.173913043478265" y="147.65625"/>
+        </tableViewCell>
+    </objects>
+</document>
