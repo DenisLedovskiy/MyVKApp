@@ -8,9 +8,9 @@
 import UIKit
 
 extension NewsViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return newsArray.count
+        return 4
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -21,6 +21,4 @@ extension NewsViewController: UITableViewDataSource {
 
         return cell
     }
-
-
 }

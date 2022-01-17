@@ -13,6 +13,10 @@ class NewsViewController: UIViewController {
     
     var newsArray = [News]()
     let reuseIdentifierNews = "reuseIdentifierNews"
+    let reuseIdentifierAvatar = "reuseIdentifierAvatar"
+    let reuseIdentifierTextNews = "reuseIdentifierTextNews"
+    let reuseIdentifierImageConetnt = "reuseIdentifierImageConetnt"
+    let reuseIdentifierLike = "reuseIdentifierLike"
 
     func fillNewsArray () {
         let news1 = News(avatarNews: UIImage(named: "meganAva")!, titleNews: "Меган Фокс", textNews: "Теперь у меня есть замечательные котята)", contentImageNews: UIImage(named: "news1")!)
@@ -27,6 +31,14 @@ class NewsViewController: UIViewController {
         fillNewsArray()
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil),
                            forCellReuseIdentifier: reuseIdentifierNews)
+        tableView.register(UINib(nibName: "Avatar+Name", bundle: nil),
+                           forCellReuseIdentifier: reuseIdentifierAvatar)
+        tableView.register(UINib(nibName: "TextNews", bundle: nil),
+                           forCellReuseIdentifier: reuseIdentifierTextNews)
+        tableView.register(UINib(nibName: "ImageContentNews", bundle: nil),
+                           forCellReuseIdentifier: reuseIdentifierImageConetnt)
+        tableView.register(UINib(nibName: "LikeCell", bundle: nil),
+                           forCellReuseIdentifier: reuseIdentifierLike)
         tableView.delegate = self
         tableView.dataSource = self
     }
