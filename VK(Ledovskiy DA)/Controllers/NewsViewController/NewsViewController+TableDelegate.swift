@@ -10,17 +10,17 @@ import UIKit
 extension NewsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400
+        return 200
     }
 
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let view: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0,
-//                                                          width: self.view.bounds.size.width,
-//                                                          height: 10))
-//        view.backgroundColor = .gray
-//
-//        return view
-//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view: UIView = UIView.init(frame: CGRect.init(x: 0, y: 0,
+                                                          width: self.view.bounds.size.width,
+                                                          height: 4))
+        view.backgroundColor = .gray
+
+        return view
+    }
 
 
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="H9K-im-kcQ" customClass="AvatarNameCell" customModule="VK_Ledovskiy_DA_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="582" height="131"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xbp-L6-LSi">
+                    <rect key="frame" x="11" y="52" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="5dx-aZ-h5g"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Dav-Fx-VA5"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="eKM-HL-BVn"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="jqh-Lx-lhb"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-1P-jKO">
+                    <rect key="frame" x="93" y="66.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="OKW-XZ-mo6"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xbp-L6-LSi" firstAttribute="leading" secondItem="OKW-XZ-mo6" secondAttribute="leading" constant="11" id="6no-rh-aZ1"/>
+                <constraint firstItem="OKW-XZ-mo6" firstAttribute="top" secondItem="Xbp-L6-LSi" secondAttribute="top" constant="-8" id="KSe-XZ-pug"/>
+                <constraint firstItem="LlH-1P-jKO" firstAttribute="leading" secondItem="Xbp-L6-LSi" secondAttribute="trailing" constant="32" id="Xa5-51-Sai"/>
+                <constraint firstItem="LlH-1P-jKO" firstAttribute="centerY" secondItem="Xbp-L6-LSi" secondAttribute="centerY" id="xjj-kK-rBi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="avatarImage" destination="Xbp-L6-LSi" id="Wax-kk-ofi"/>
+                <outlet property="nameLabel" destination="LlH-1P-jKO" id="UfL-eQ-1I5"/>
+            </connections>
+            <point key="canvasLocation" x="-484.05797101449281" y="-250.78125"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
