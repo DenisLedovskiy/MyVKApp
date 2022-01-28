@@ -66,10 +66,3 @@ extension NewsViewController: UITableViewDataSource {
 //        }
     }
 }
-
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierNews, for: indexPath)
-//                as? NewsTableViewCell else {return UITableViewCell()}
-//
-//        cell.configure(news: newsArray[indexPath.row])
-//
-//        return cell
