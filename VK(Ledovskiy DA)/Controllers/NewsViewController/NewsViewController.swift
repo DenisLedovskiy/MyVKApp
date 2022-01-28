@@ -7,6 +7,13 @@
 
 import UIKit
 
+enum PostCellType: Int, CaseIterable {
+    case author = 0
+    case text
+    case photo
+    case likeCount
+}
+
 class NewsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -16,7 +23,7 @@ class NewsViewController: UIViewController {
     let reuseIdentifierAvatar = "reuseIdentifierAvatar"
     let reuseIdentifierTextNews = "reuseIdentifierTextNews"
     let reuseIdentifierImageConetnt = "reuseIdentifierImageConetnt"
-    let reuseIdentifierLike = "reuseIdentifierLike"
+    let reuseIdentifierLikes = "reuseIdentifierLikes"
 
     func fillNewsArray () {
         let news1 = News(avatarNews: UIImage(named: "meganAva")!, titleNews: "Меган Фокс", textNews: "Теперь у меня есть замечательные котята)", contentImageNews: UIImage(named: "news1")!, counterLikeNews: "100")
@@ -37,8 +44,9 @@ class NewsViewController: UIViewController {
                            forCellReuseIdentifier: reuseIdentifierTextNews)
         tableView.register(UINib(nibName: "ImageContentNews", bundle: nil),
                            forCellReuseIdentifier: reuseIdentifierImageConetnt)
-        tableView.register(UINib(nibName: "LikeCell", bundle: nil),
-                           forCellReuseIdentifier: reuseIdentifierLike)
+        tableView.register(UINib(nibName: "LikesCell", bundle: nil),
+                           forCellReuseIdentifier: reuseIdentifierLikes)
+
         tableView.delegate = self
         tableView.dataSource = self
     }

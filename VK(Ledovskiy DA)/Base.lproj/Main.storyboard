@@ -405,7 +405,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="08P-2q-46D">
-                                <rect key="frame" x="4" y="188" width="406" height="670"/>
+                                <rect key="frame" x="4" y="108" width="406" height="750"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="161" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -417,7 +417,7 @@
                             <constraint firstItem="f0f-MJ-sLW" firstAttribute="trailing" secondItem="08P-2q-46D" secondAttribute="trailing" constant="4" id="PKa-za-sOC"/>
                             <constraint firstItem="f0f-MJ-sLW" firstAttribute="bottom" secondItem="08P-2q-46D" secondAttribute="bottom" constant="4" id="WnZ-es-IEm"/>
                             <constraint firstItem="08P-2q-46D" firstAttribute="leading" secondItem="f0f-MJ-sLW" secondAttribute="leading" constant="4" id="gEE-TD-N51"/>
-                            <constraint firstItem="08P-2q-46D" firstAttribute="top" secondItem="f0f-MJ-sLW" secondAttribute="top" constant="100" id="xcW-W5-6eG"/>
+                            <constraint firstItem="08P-2q-46D" firstAttribute="top" secondItem="f0f-MJ-sLW" secondAttribute="top" constant="20" id="xcW-W5-6eG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Новости" id="N3B-Ki-CuA"/>
