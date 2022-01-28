@@ -13,4 +13,5 @@ struct News {
     var titleNews = String()
     var textNews = String()
     var contentImageNews = UIImage()
+    var counterLikeNews = String()
 }

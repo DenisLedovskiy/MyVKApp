@@ -16,6 +16,7 @@ class NewsTableViewCell: UITableViewCell {
     
 
     override func prepareForReuse() {
+        super.prepareForReuse()
         newsAvatar.image = nil
         newsLabel.text = nil
         newsText.text = nil
