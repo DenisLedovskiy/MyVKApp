@@ -23,19 +23,19 @@ extension NewsViewController: UITableViewDataSource {
         let postCellType = PostCellType(rawValue: indexPath.row)
 
         switch postCellType {
-        case .author1:
+        case .author:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierAvatar) as! AvatarNameCell
             cell.configure(news: item)
             return cell
-        case .text1:
+        case .text:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierTextNews) as! TextNews
             cell.configure(text: item)
             return cell
-        case .photo1:
+        case .photo:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierImageConetnt) as! ImageContentNews
             cell.configure(image: item)
             return cell
-        case .likeCount1:
+        case .likeCount:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierLikes) as! LikesNews
             cell.configure(like: item)
             return cell
@@ -43,26 +43,5 @@ extension NewsViewController: UITableViewDataSource {
             return UITableViewCell()
 
         }
-
-//        switch indexPath.row {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierAvatar) as! AvatarNameCell
-//            cell.configure(news: newsArray[indexPath.section])
-//            return cell
-//        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierTextNews) as! TextNews
-//            cell.configure(text: newsArray[indexPath.section])
-//            return cell
-//        case 2:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierImageConetnt) as! ImageContentNews
-//            cell.configure(image: newsArray[indexPath.section])
-//            return cell
-//        case 3:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierLikes) as! LikesNews
-//            cell.configure(like: newsArray[indexPath.section])
-//            return cell
-//        default:
-//            return UITableViewCell()
-//        }
     }
 }
