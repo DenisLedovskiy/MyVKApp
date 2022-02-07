@@ -23,19 +23,19 @@ extension NewsViewController: UITableViewDataSource {
         let postCellType = PostCellType(rawValue: indexPath.row)
 
         switch postCellType {
-        case .author:
+        case .author1:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierAvatar) as! AvatarNameCell
             cell.configure(news: item)
             return cell
-        case .text:
+        case .text1:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierTextNews) as! TextNews
             cell.configure(text: item)
             return cell
-        case .photo:
+        case .photo1:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierImageConetnt) as! ImageContentNews
             cell.configure(image: item)
             return cell
-        case .likeCount:
+        case .likeCount1:
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierLikes) as! LikesNews
             cell.configure(like: item)
             return cell

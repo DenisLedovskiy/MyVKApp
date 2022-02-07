@@ -10,10 +10,10 @@ import Alamofire
 import SwiftyJSON
 
 enum PostCellType: Int, CaseIterable {
-    case author = 0
-    case text
-    case photo
-    case likeCount
+    case author1 = 0
+    case text1
+    case photo1
+    case likeCount1
 }
 
 class NewsViewController: UIViewController {
@@ -56,16 +56,15 @@ class NewsViewController: UIViewController {
         tableView.register(UINib(nibName: "LikesCell", bundle: nil),
                            forCellReuseIdentifier: reuseIdentifierLikes)
 
-        DispatchQueue.main.async { [self] in
-
             newsManager.get { feed in
-                newsItemsPostArray = (feed?.response.items)!
-                newsProfilesPostArray = (feed?.response.profiles)!
-                newsGroupsPostArray = (feed?.response.groups)!
-                tableView.reloadData()
-                print(newsItemsPostArray)
+                self.newsItemsPostArray = (feed?.response.items)!
+                self.newsProfilesPostArray = (feed?.response.profiles)!
+                self.newsGroupsPostArray = (feed?.response.groups)!
+                print(self.newsItemsPostArray)
+                print("-------------")
+                print(self.newsProfilesPostArray)
             }
-        }
+
         tableView.delegate = self
         tableView.dataSource = self
     }
