@@ -6,6 +6,7 @@ target 'VK(Ledovskiy DA)' do
   use_frameworks!
 pod 'Alamofire'
 pod 'RealmSwift'
+pod 'SwiftyJSON'
 
   # Pods for VK(Ledovskiy DA)
 
