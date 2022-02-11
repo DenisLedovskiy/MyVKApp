@@ -18,7 +18,7 @@ class FriendsViewController: UIViewController {
 
     let session = Session.instance
     let realmManager = RealmManager()
-    let promiseFriends = FriendsPromiseRequest()
+//    let promiseFriends = FriendsPromiseRequest()
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendToGallerySegue = "fromFriendToGallery"
@@ -164,18 +164,18 @@ class FriendsViewController: UIViewController {
         tableView.dataSource = self
         searchBar.delegate = self
 
-        firstly {
-            promiseFriends.getDataFriends()
-        }.then { data in
-            self.promiseFriends.decodeJSON(for: data)
-        }.then { friends in
-            self.promiseFriends.fillFrieandsArray(for: friends)
-        }.done { friendArrayPromise in
-            self.friendArray = friendArrayPromise
-            self.tableView.reloadData()
-        }.catch { error in
-            print(error)
-        }
+//        firstly {
+//            promiseFriends.getDataFriends()
+//        }.then { data in
+//            self.promiseFriends.decodeJSON(for: data)
+//        }.then { friends in
+//            self.promiseFriends.fillFrieandsArray(for: friends)
+//        }.done { friendArrayPromise in
+//            self.friendArray = friendArrayPromise
+//            self.tableView.reloadData()
+//        }.catch { error in
+//            print(error)
+//        }
 
         //        self.dataSource = realmManager.getFrineds()
         //        fillFriendAraayFromRealm(dataSource)
