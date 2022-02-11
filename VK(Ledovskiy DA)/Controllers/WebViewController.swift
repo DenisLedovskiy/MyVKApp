@@ -68,12 +68,12 @@ class WebViewController: UIViewController {
                    URLQueryItem(name: "client_id", value: "8008842"),
                    URLQueryItem(name: "display", value: "mobile"),
                    URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
-                   URLQueryItem(name: "scope", value: "offline"),
+                   URLQueryItem(name: "scope", value: "401502"),
                    URLQueryItem(name: "response_type", value: "token"),
                    URLQueryItem(name: "v", value: "5.68")
                ]
 
-//        scope 262150     v 5.68
+//        scope 262150 offline 401502    v 5.68
 
         let request = URLRequest(url: urlComponents.url!)
 
