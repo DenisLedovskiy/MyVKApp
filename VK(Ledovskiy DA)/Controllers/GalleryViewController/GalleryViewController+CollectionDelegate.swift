@@ -15,7 +15,7 @@ extension GalleryViewController: UICollectionViewDelegate {
 //                     UIImage(named: "diana4")!, UIImage(named: "diana5")!, UIImage(named: "diana6")!]
 //        galleryView.setImages(images: image)
 
-        showZoomView(image: self.photos[indexPath.item])
+//        showZoomView(image: self.photos[indexPath.item])
 
         // Эскперимент с анимацией
 
