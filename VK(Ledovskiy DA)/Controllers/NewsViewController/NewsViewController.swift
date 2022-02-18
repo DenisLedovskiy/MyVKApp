@@ -9,6 +9,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+// MARK: Сдам дз на следующей недели. Пока что-то полный завал. И не охота делать от балды, хочется нормально сесть и все попробовать.
+
 enum PostCellType: Int, CaseIterable {
     case author = 0
     case text
