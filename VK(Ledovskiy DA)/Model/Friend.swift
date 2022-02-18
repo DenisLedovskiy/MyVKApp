@@ -16,7 +16,7 @@ import Realm
 //    @objc dynamic var id: Int = 0
 //}
 
-struct Friend{
+struct Friend {
     var name = String()
     var avatar = UIImage()
     var photos = [UIImage]()

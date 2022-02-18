@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+
+// MARK: Сдам дз на следующей недели. Пока что-то полный завал. И не охота делать от балды, хочется нормально сесть и все попробовать.
 
 enum PostCellType: Int, CaseIterable {
     case author = 0
@@ -17,6 +21,13 @@ enum PostCellType: Int, CaseIterable {
 class NewsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+
+    let session = Session.instance
+    var newsManager = NewsManager()
+
+    var newsItemsPostArray = [NewsItems]()
+    var newsProfilesPostArray = [NewsProfiles]()
+    var newsGroupsPostArray = [NewsGroups]()
     
     var newsArray = [News]()
     let reuseIdentifierNews = "reuseIdentifierNews"
@@ -47,9 +58,16 @@ class NewsViewController: UIViewController {
         tableView.register(UINib(nibName: "LikesCell", bundle: nil),
                            forCellReuseIdentifier: reuseIdentifierLikes)
 
+            newsManager.get { feed in
+                self.newsItemsPostArray = (feed?.response.items)!
+                self.newsProfilesPostArray = (feed?.response.profiles)!
+                self.newsGroupsPostArray = (feed?.response.groups)!
+                print(self.newsItemsPostArray)
+                print("-------------")
+                print(self.newsProfilesPostArray)
+            }
+
         tableView.delegate = self
         tableView.dataSource = self
     }
-    
-
 }
