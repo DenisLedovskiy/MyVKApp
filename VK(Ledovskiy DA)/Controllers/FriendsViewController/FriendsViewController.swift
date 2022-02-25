@@ -68,7 +68,7 @@ class FriendsViewController: UIViewController {
             for i in 0...friendsCount! - 1 {
                 guard let avatar = getImage(from: (friends?[i].photo)!) else { return }
 
-                friendArray.append(Friend(name: (friends?[i].firstName)! + (friends?[i].lastName)!, avatar: avatar, photos: [UIImage()], id: (friends?[i].id)!))
+                friendArray.append(Friend(name: (friends?[i].firstName)! + " " + (friends?[i].lastName)!, avatar: avatar, photos: [UIImage()], id: (friends?[i].id)!))
             }
 
             friendArray = friendArray.sorted { $0.name.lowercased() < $1.name.lowercased() }
@@ -269,6 +269,8 @@ class FriendsViewController: UIViewController {
                 guard let self = self else {return}
                 self.performSegue(withIdentifier: self.fromFriendToGallerySegue, sender: myFriend)
             })
+            cell.setTitleLabel(text: (arrayByLetter(sourceArray: friendArray, letter: arrayLetter(sourceArray: friendArray)[indexPath.section])[indexPath.row].name))
+            
             return cell
         }
 

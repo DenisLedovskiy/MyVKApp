@@ -9,12 +9,27 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var avatarImageView: UIImageView! {
+            didSet {
+                avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+            }
+        }
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    @IBOutlet weak var backView: UIView!{
+        didSet {
+            backView.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
 
     var completion: ((Friend) -> Void)?
     var friend: Friend?
+
+    let instets: CGFloat = 10
+    let imageSize: CGFloat = 50
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -28,14 +43,61 @@ class CustomTableViewCell: UITableViewCell {
         self.completion = completion
         self.friend = friend
         avatarImageView.image = friend.avatar
-        titleLabel.text = friend.name
+//        titleLabel.text = friend.name
     }
 
     func configure(group: Group) {
         avatarImageView.image = group.avatar
-        titleLabel.text = group.title
+//        titleLabel.text = group.title
     }
 
+    func setTitleLabel(text: String) {
+        titleLabel.text = text
+        titleLabelFrame()
+        }
+
+    override func layoutSubviews() {
+            super.layoutSubviews()
+
+        titleLabelFrame()
+        avatarFrame()
+        backViewFrame()
+        }
+
+
+
+    func getLabelSize(text: String, font: UIFont) -> CGSize {
+            let maxWidth = bounds.width - instets * 3 - imageSize
+            let textBlock = CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude)
+
+        let rect = text.boundingRect(with: textBlock, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+            let width = Double(rect.size.width)
+            let height = Double(rect.size.height)
+            let size = CGSize(width: ceil(width), height: ceil(height))
+            return size
+    }
+
+    func titleLabelFrame() {
+        let titleLabelSize = getLabelSize(text: titleLabel.text!, font: titleLabel.font)
+        let titleLabelX = ((bounds.width - titleLabelSize.width) / 2) + imageSize + instets
+        let titleLabelY = bounds.height - titleLabelSize.height - instets
+        let titleLabelOrigin =  CGPoint(x: titleLabelX, y: titleLabelY)
+        titleLabel.frame = CGRect(origin: titleLabelOrigin, size: titleLabelSize)
+    }
+
+    func avatarFrame() {
+        let avatarSideLinght = imageSize
+        let avatarSize = CGSize(width: avatarSideLinght, height: avatarSideLinght)
+        let avatarOrigin = CGPoint(x: instets, y: bounds.midY - avatarSideLinght / 2)
+        avatarImageView.frame = CGRect(origin: avatarOrigin, size: avatarSize)
+    }
+
+    func backViewFrame() {
+        let backViewSideLinght = imageSize
+        let backViewSize = CGSize(width: backViewSideLinght, height: backViewSideLinght)
+        let backViewOrigin = CGPoint(x: instets, y: bounds.midY - backViewSideLinght / 2)
+        backView.frame = CGRect(origin: backViewOrigin, size: backViewSize)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
