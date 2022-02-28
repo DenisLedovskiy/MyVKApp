@@ -43,33 +43,5 @@ extension NewsViewController: UITableViewDataSource {
             return UITableViewCell()
 
         }
-
-//        switch indexPath.row {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierAvatar) as! AvatarNameCell
-//            cell.configure(news: newsArray[indexPath.section])
-//            return cell
-//        case 1:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierTextNews) as! TextNews
-//            cell.configure(text: newsArray[indexPath.section])
-//            return cell
-//        case 2:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierImageConetnt) as! ImageContentNews
-//            cell.configure(image: newsArray[indexPath.section])
-//            return cell
-//        case 3:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierLikes) as! LikesNews
-//            cell.configure(like: newsArray[indexPath.section])
-//            return cell
-//        default:
-//            return UITableViewCell()
-//        }
     }
 }
-
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifierNews, for: indexPath)
-//                as? NewsTableViewCell else {return UITableViewCell()}
-//
-//        cell.configure(news: newsArray[indexPath.row])
-//
-//        return cell
