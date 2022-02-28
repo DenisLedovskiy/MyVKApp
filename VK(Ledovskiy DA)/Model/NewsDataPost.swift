@@ -15,12 +15,14 @@ struct NewsResponse: Codable {
     let items: [NewsItems]
     let profiles: [NewsProfiles]
     let groups: [NewsGroups]
+    let next_from: String
 }
 
 struct NewsItems: Codable {
     let source_id: Int
     let date: Int
     let text: String
+    let attachments: [NewsAttachents]
 
 }
 
@@ -38,5 +40,25 @@ struct NewsGroups: Codable {
     let photo_50: String
 
 }
+
+struct NewsAttachents: Codable {
+
+    let photo: NewsPhoto
+}
+
+struct NewsPhoto: Codable {
+
+    let sizes: [NewsPhotoSizes]
+}
+
+class NewsPhotoSizes: Codable {
+
+    let width: Int
+    let height: Int
+    let url: String
+    let type: String
+}
+
+
 
 

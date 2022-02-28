@@ -59,7 +59,7 @@ class FriendsPromiseRequest {
             for i in 0...friendsCount! - 1 {
                 guard let avatar = getImage(from: (friend?[i].photo)!) else { return }
 
-                friendArrayPromise.append(Friend(name: (friend?[i].firstName)! + (friend?[i].lastName)!, avatar: avatar,
+                friendArrayPromise.append(Friend(name: (friend?[i].firstName)! + " " + (friend?[i].lastName)!, avatar: avatar,
                                           photos: [UIImage()], id: (friend?[i].id)!))
             }
 

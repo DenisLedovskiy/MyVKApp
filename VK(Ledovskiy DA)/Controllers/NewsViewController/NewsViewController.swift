@@ -9,8 +9,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-// MARK: Сдам дз на следующей недели. Пока что-то полный завал. И не охота делать от балды, хочется нормально сесть и все попробовать.
-
 enum PostCellType: Int, CaseIterable {
     case author = 0
     case text
@@ -18,16 +16,21 @@ enum PostCellType: Int, CaseIterable {
     case likeCount
 }
 
-class NewsViewController: UIViewController {
+class NewsViewController: UIViewController, UITableViewDataSourcePrefetching {
 
     @IBOutlet weak var tableView: UITableView!
 
     let session = Session.instance
     var newsManager = NewsManager()
 
+    var nextFrom = ""
+    var isLoading = false
+
+
     var newsItemsPostArray = [NewsItems]()
     var newsProfilesPostArray = [NewsProfiles]()
     var newsGroupsPostArray = [NewsGroups]()
+    var refreshControl = UIRefreshControl()
     
     var newsArray = [News]()
     let reuseIdentifierNews = "reuseIdentifierNews"
@@ -44,8 +47,33 @@ class NewsViewController: UIViewController {
         newsArray.append(news2)
     }
 
+    fileprivate func setupRefreshControl() {
+        refreshControl = UIRefreshControl()
+           refreshControl.attributedTitle = NSAttributedString(string: "Обновление...")
+           refreshControl.tintColor = .red
+           refreshControl.addTarget(self, action: #selector(refreshNews), for: .valueChanged)
+       }
+
+    @objc func refreshNews() {
+          self.refreshControl.beginRefreshing()
+          let mostFreshNewsDate = self.newsItemsPostArray.first?.date ?? 1645994237
+        
+        newsManager.get(startTime: mostFreshNewsDate + 1) { [weak self] (news, nextFrom) in
+              guard let self = self else { return }
+              self.refreshControl.endRefreshing()
+            guard news!.response.items.count > 0 else { return }
+            self.newsItemsPostArray = news!.response.items + self.newsItemsPostArray
+            let indexSet = IndexSet(integersIn: 0..<news!.response.items.count)
+              self.tableView.insertSections(indexSet, with: .automatic)
+            print("11111111")
+          }
+      }
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupRefreshControl()
         fillNewsArray()
         tableView.register(UINib(nibName: "NewsTableViewCell", bundle: nil),
                            forCellReuseIdentifier: reuseIdentifierNews)
@@ -58,16 +86,17 @@ class NewsViewController: UIViewController {
         tableView.register(UINib(nibName: "LikesCell", bundle: nil),
                            forCellReuseIdentifier: reuseIdentifierLikes)
 
-            newsManager.get { feed in
+            newsManager.get(startTime: 1645994237) { (feed, nextFrom) in
                 self.newsItemsPostArray = (feed?.response.items)!
                 self.newsProfilesPostArray = (feed?.response.profiles)!
                 self.newsGroupsPostArray = (feed?.response.groups)!
+                self.nextFrom = (feed?.response.next_from)!
                 print(self.newsItemsPostArray)
-                print("-------------")
-                print(self.newsProfilesPostArray)
             }
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
+
     }
 }
