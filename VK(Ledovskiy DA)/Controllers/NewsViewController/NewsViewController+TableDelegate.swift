@@ -5,6 +5,8 @@
 //  Created by Денис Ледовский on 31.10.2021.
 //
 
+// MARK: Просто для сдачи 8-го дз
+
 import UIKit
 
 extension NewsViewController: UITableViewDelegate {
