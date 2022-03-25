@@ -19,6 +19,7 @@ class FriendsViewController: UIViewController {
     let session = Session.instance
     let realmManager = RealmManager()
     let promiseFriends = FriendsPromiseRequest()
+    let friendsAdapter = FriendsAdapter()
 
     let reuseIdentifierCustom = "reuseIdentifierCustom"
     let fromFriendToGallerySegue = "fromFriendToGallery"
@@ -31,6 +32,7 @@ class FriendsViewController: UIViewController {
 //    var dataSource: Results<Items>?
 
     var dataSource: [Items] = []
+    let friendsFactory = FriendsViewModelFactory()
 
     func getImage(from url: String) -> UIImage? {
             var image: UIImage?
@@ -119,7 +121,8 @@ class FriendsViewController: UIViewController {
             do {
                 let friends = try JSONDecoder().decode(FriendsResponse.self, from: data!)
                 let pars = friends.response?.items
-                self.fillFriendsArray(friends)
+//                self.fillFriendsArray(friends)
+                self.friendsFactory.constructViewModels(from: friends)
 
                 DispatchQueue.main.async {
 //                    self.realmManager.save(data: Array(pars!))
@@ -163,6 +166,12 @@ class FriendsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+
+        friendsAdapter.getFriends(completion: {
+            [weak self] friends in
+            self?.friendArray = friends!
+            self?.tableView.reloadData()
+        } )
 
         firstly {
             promiseFriends.getDataFriends()

@@ -105,7 +105,8 @@ class CustomTableViewCell: UITableViewCell {
         avatarImageView.layer.borderColor = UIColor.white.cgColor
         avatarImageView.layer.borderWidth = 1
         backView.layer.cornerRadius = CGFloat(cellHeight / 2 - 4)
-        backView.layer.shadowColor = UIColor.black.cgColor
+        backView.layer.shadowColor = UIColor.brandGrey.cgColor
+//        backView.layer.shadowColor = UIColor.black.cgColor
         backView.layer.shadowOffset = CGSize(width: 6, height: 6)
         backView.layer.shadowRadius = 8
         backView.layer.shadowOpacity = 1
