@@ -168,6 +168,7 @@ extension MyGroupsViewController: UITableViewDataSource, UITableViewDelegate {
                 as? CustomTableViewCell else {return UITableViewCell()}
 
         cell.configure(group: myGroupsArray[indexPath.row])
+        cell.setTitleLabel(text: myGroupsArray[indexPath.row].title)
 
         return cell
     }
