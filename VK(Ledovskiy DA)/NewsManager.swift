@@ -9,7 +9,14 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class NewsManager {
+protocol NewsManagerProtocol {
+
+    func get (startTime: Int,
+              startFrom: String,
+              _ completion: @escaping ((NewsInitialResponse?), (String)) -> ())
+}
+
+class NewsManager: NewsManagerProtocol {
 
     let session = Session.instance
     var nextFrom = ""
@@ -17,7 +24,7 @@ class NewsManager {
 
 
     func get (startTime: Int,
-              startFrom: String = "",
+              startFrom: String,
               _ completion: @escaping ((NewsInitialResponse?), (String)) -> ()) {
 
         AF.request("https://api.vk.com/method/newsfeed.get", parameters: [
