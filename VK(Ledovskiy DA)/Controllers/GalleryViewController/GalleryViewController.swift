@@ -22,6 +22,13 @@ class GalleryViewController: UIViewController {
     var avatar = UIImage()
 
     let session = Session.instance
+
+    lazy var photoService = PhotoService(container: collectionView)
+
+    lazy var urlPhoto: String = {
+            return "http://api.vk.com/method/photos.get?v=5.81&access_token=\(session.token)&album_id=wall&rev=1&photos_sizes=1&extended=1&count=20&user_id=\(friendId)"
+        }()
+
 //
 //    var mainImageView = UIImageView()
 //    var secondaryImageView = UIImageView()
@@ -34,12 +41,13 @@ class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getFriendsPhotosInitialResponse()
+//        getFriendsPhotosInitialResponse()
 
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib(nibName: "GalleryCollectionCell", bundle: nil),
                                 forCellWithReuseIdentifier:"reuseIdentifierGalleryCell")
+//        let photoService = PhotoService(container: collectionView)
     }
 
 
@@ -89,4 +97,6 @@ class GalleryViewController: UIViewController {
 
            return image
        }
+
+
 }

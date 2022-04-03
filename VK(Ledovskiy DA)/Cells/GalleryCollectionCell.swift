@@ -23,7 +23,7 @@ class GalleryCollectionCell: UICollectionViewCell {
         heartButton.setImage(UIImage(systemName: "heart"), for: .normal)
     }
 
-    func configure(image: UIImage) {
+    func configure(image: UIImage?) {
         photoImageView.image = image
     }
 
